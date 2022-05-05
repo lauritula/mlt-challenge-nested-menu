@@ -1,0 +1,17 @@
+<button *ngIf="isRootNode" mat-menu-item [matMenuTriggerFor]="menu">
+    {{ trigger }}
+</button>
+<button *ngIf="!isRootNode" mat-menu-item [matMenuTriggerFor]="menu" (menuOpened)="getData(trigger)">
+    {{ trigger.name }}
+</button>
+<mat-menu #menu="matMenu">
+    <ng-container *ngFor="let node of data" 
+    style="display: flex; justify-content: center; align-items: center">
+        <button mat-menu-item  >
+            <app-menu [trigger]="node" *ngIf="hasData(node); else menuItem"></app-menu>
+        </button>
+        <ng-template #menuItem>
+            <button mat-menu-item>{{ node.name }}</button>
+        </ng-template>
+    </ng-container>
+</mat-menu>
