@@ -18,5 +18,6 @@ import {MatMenuModule} from '@angular/material/menu';
   ],
   providers: [],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }
