@@ -7,7 +7,7 @@
 <mat-menu #menu="matMenu">
     <ng-container *ngFor="let node of data" 
     style="display: flex; justify-content: center; align-items: center">
-        <button mat-menu-item  >
+        <button mat-menu-item style="padding: 0px;"  >
             <app-menu [trigger]="node" *ngIf="hasData(node); else menuItem"></app-menu>
         </button>
         <ng-template #menuItem>
